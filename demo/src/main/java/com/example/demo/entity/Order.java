@@ -1,11 +1,22 @@
 package com.example.demo.entity;
 
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 public class Order {
 	@NotNull	//included valid dependency in pom.xml
 	private String item;
 	private float price;
+	@NotNull
+	private int id;	//TO DO
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 
 	public float getPrice() {
 		return price;
