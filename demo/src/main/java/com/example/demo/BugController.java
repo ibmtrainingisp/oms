@@ -9,20 +9,20 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class BugController {
-	@PostMapping("/bug")
+	@PostMapping("/bg")
 	String createBug() {
 		return "Bug Created";
 	}
-	@GetMapping("/bug")
+	@GetMapping("/bg")
 	String searchBug() {
 		return "Bug Retrieved";
 	}
-	@PutMapping("/bug/{id}")
+	@PutMapping("/bg/{id}")
 	String updateBug(@PathVariable("id")int BugId) {
 		System.out.println(BugId);
 		return "Bug Updated";
 	}
-	@DeleteMapping("/bug/{id}")
+	@DeleteMapping("/bg/{id}")
 	String deleteBug(@PathVariable("id")int BugId) {
 		System.out.println(BugId);
 		return "Bug Deleted";
