@@ -2,6 +2,7 @@ package com.example.demo.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,13 +20,15 @@ public class OrderService { // Spring Beans//ServiceLayer
 		//return "Order Created";
 	}
 	public List<Order> getOrders() {
-		return new ArrayList<Order>();
+		//return new ArrayList<Order>();	//implementation before repository interface was created
+		return orderRepository.findAll();
 	}
-	public Order getOrder(int orderId) {
-		return new Order();
+	public Optional<Order> getOrder(String orderId) {
+		//return new Order();
+		return orderRepository.findById(orderId);
 	}
-	public void updateOrder(int orderId) {
-		
+	public void updateOrder(Order order) {
+		orderRepository.save(order);
 	}
 	public void deleteOrder(int orderId) {
 		System.out.println("Order Deleted");
