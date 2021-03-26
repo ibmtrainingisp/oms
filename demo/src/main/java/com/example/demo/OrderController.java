@@ -22,8 +22,7 @@ import com.example.demo.service.OrderService;
 
 @RestController // Bean
 public class OrderController { // frontend
-	@Autowired // is used for Dependency Injection-call the dependency service in a dependent
-				// controller
+	@Autowired // is used for Dependency Injection-call the dependency service in a dependent controller
 	OrderService orderService;
 
 	@PostMapping("/order")
