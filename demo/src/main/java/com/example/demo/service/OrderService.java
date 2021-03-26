@@ -30,7 +30,7 @@ public class OrderService { // Spring Beans//ServiceLayer
 	public void updateOrder(Order order) {
 		orderRepository.save(order);
 	}
-	public void deleteOrder(int orderId) {
-		System.out.println("Order Deleted");
+	public void deleteOrder(String orderId) {
+		orderRepository.deleteById(orderId);
 	}
 }
